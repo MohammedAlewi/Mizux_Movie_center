@@ -17,14 +17,3 @@ class MovieCategory:
 
 
 
-# class Movie(models.Model):
-#     movie_title= models.CharField(max_length=200)
-#     movie_description = models.CharField(max_length=200)
-#     main_start = models.CharField(max_length=200)
-#     released_date = models.DateTimeField('date published')
-
-
-# class MovieCategory(models.Model):
-#     movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
-#     cate = models.CharField(max_length=200)
-#     votes = models.IntegerField(default=0)
