@@ -1,0 +1,184 @@
+<html lang="en">
+<!DOCTYPE html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        {% load static %}
+		<link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
+		<!-- <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet"> -->
+		<link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/cosmo/bootstrap.min.css" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+		{% load static %}
+		<link rel="stylesheet" href="{% static "css/style.css" %}" />
+		{% load static %}
+		<script src="{% static "js/jquery-3.3.1.js" %}"></script>
+		{% load static %}
+		<script href="{% static "js/script.js" %}"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+        <link rel="stylesheet" href="../static/css/font-awesome.min.css">
+        <link rel="stylesheet" href="../static/css/bootstrap.css">   
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>Bootstrap Sandbox</title>
+
+        <!--INLINE CSS-->
+        <style>
+            nav{
+                opacity: 0.7;
+                border-bottom: #008ed6 2px solid;
+            }
+
+            #header-top{
+                margin-top: 5.5%;
+                clear: both;
+                background-image: url('img/mountains.jpg');
+                background-size: cover;
+                height: 450px;
+            }
+
+            #header-top-container{
+                background-color:rgba(50, 146, 166, 0.8);
+                height: 450px;
+                font-weight: 100;
+            }
+
+            .text-small{
+                font-size: small;
+            }
+
+            #description{
+                background-color: lightgray;
+            }
+            .img-circle{
+                border: 100%;
+            }
+            .card-img-top {
+                margin-top: -50px;
+            }
+
+            #authors .card:hover{
+                background: #008ed0;
+                color: white;
+            }
+            #selector{
+                margin-top: 10% !important;
+            }
+        </style>
+        <!--END CSS-->
+    
+    </head>
+    <body class="home">
+
+
+        <!--NAV-BAR-->
+        <nav class="navbar navbar-light bg-white navbar-expand-sm fixed-top py-2 ">
+            <div class="container  px-5">
+                <button class="navbar-toggler" data-toggle="collapse" data-target="#nav">
+                    <i class="navbar-toggler-icon"></i>
+                </button>
+                <a href="#" class="navbar-brand">
+                    <img src="img/mlogo.png" class="img-fluid"  width="50" height="50">
+                    <h3 class="d-inline align-middle">Mizuxe</h3>
+                </a>
+                <div class="navbar-collapse collapse" id="nav">
+                    <div class="navbar-nav  ml-auto">
+                        <div class="nav-item"><a href="/movie" class="nav-link">Home</a></div>
+                        <div class="nav-item"><a href="/movie/add_movies/" class="nav-link">Add New Movie</a></div>
+                        <div class="nav-item"><a href="/movie/add_categories/" class="nav-link">Add New Category</a></div>
+                        <!-- <div class="nav-item"><a href="" class="nav-link">Contact</a></div> -->
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!--END NAV-BAR-->
+
+
+
+       
+
+        <section class="my-5 bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 mt-5">
+                        <div class="div h4 text-info">Add New Movies</div>
+                        <p class="text-muted">Add new Movies to your Prefered category</p>
+                        <form class="from"  action="/movie/add_movies/post/" method="POST">
+                            <div class="row">
+                                <div class="col form-group">
+                                    <label for="Name">Movie Title</label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <!-- <i class="fa fa-user"></i> -->
+                                        </span>
+                                        <input placeholder="movie title" type="text" name="movie_title" class="form-control rounded-0">
+                                    </div>
+                                </div>
+                                <div class="col form-group">
+                                    <label for="email">Main Star</label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <!-- <i class="fa fa-envelope"></i> -->
+                                        </span>
+                                        <input placeholder="main star" type="text" name="main_star" class="form-control rounded-0">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class=" form-group">
+                                        <label for="email">Released Date</label>
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <!-- <i class="fa fa-envelope"></i> -->
+                                            </span>
+                                            <input placeholder="main star" type="datetime" name="release_date" class="form-control rounded-0">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group" >   
+                                                 
+                                        <label for="gender">Movie Category</label>
+                                        <select  class="form-control" id="gender" name="category">
+                                            {% for cat in categories %}
+                                        <option>{{cat}}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="from-group">
+                                <label for="comment">Description</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <!-- <i class="fa fa-pencil"></i> -->
+                                    </span>
+                                    <textarea placeholder="comment" name="description" id="" cols="30" rows="10" class="form-control rounded-0"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group mt-2">
+                                <input type="submit" value="Add Movie" class="btn btn-block btn-info">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+           
+        </section> 
+
+    
+    </body>  
+    {% load static %}
+<script src="{% static "js/popper.min.js" %}"></script>
+<script src="{% static "js/jquery-3.3.1.js" %}"></script>
+<script src="{% static "js/bootstrap.min.js" %}"></script>
+    <script src="../static/js/jquery-3.3.1.js"></script>
+    <script src="../static/js/popper.min.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <script src="../static/js/navbar-fixed.js"></script>
+</html>
