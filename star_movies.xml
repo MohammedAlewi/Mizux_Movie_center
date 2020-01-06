@@ -1,0 +1,7 @@
+<movie_data><Chinese><category_name>Chinese</category_name><category_description>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos hic repellendus unde laboriosam et vel?
+        </category_description><category_genere>Action Triller</category_genere><movies><Movie><movie_title>New Hope</movie_title><movie_description>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos hic repellendus unde laboriosam et vel?
+        </movie_description><main_star>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos hic repellendus unde laboriosam et vel?
+        </main_star><released_date>jan 20 20</released_date></Movie></movies></Chinese><Japan><category_name>Japan</category_name><category_description>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos hic repellendus unde laboriosam et vel?
+        </category_description><category_genere>Action Triller</category_genere><movies><Movie><movie_title>New War</movie_title><movie_description>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos hic repellendus unde laboriosam et vel?
+        </movie_description><main_star>lol  aha</main_star><released_date>komuno</released_date></Movie></movies></Japan><Indian><category_name>Indian</category_name><category_description>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos hic repellendus unde laboriosam et vel?
+        </category_description><category_genere>None</category_genere><movies /></Indian></movie_data>
