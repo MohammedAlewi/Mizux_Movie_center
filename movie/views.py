@@ -86,6 +86,7 @@ def add_categories(request):
     context={}
     return render(request,'movie_site_3.html',context)
 
+
 @csrf_exempt
 def post_categories(request):
     xml=XmlPr()
